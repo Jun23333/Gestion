@@ -21,5 +21,5 @@ Route::get('/all', 'App\Http\Controllers\indexController@index');
 
 Route::get('/view', 'App\Http\Controllers\indexController@view');
 Route::get('/del', 'App\Http\Controllers\indexController@del');
-Route::get('/add', 'App\Http\Controllers\indexController@add');
-Route::get('/mod', 'App\Http\Controllers\indexController@mod');
+Route::post('/add', 'App\Http\Controllers\indexController@add');
+Route::post('/mod', 'App\Http\Controllers\indexController@mod');

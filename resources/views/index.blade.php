@@ -62,7 +62,8 @@ and open the template in the editor.
 						<h4>Agregar</h4>
 					</div>
 					<div class="modal-body">
-		                            <form action="add" method="get">
+		                            <form action="add" method="post">
+		                            	{{ csrf_field() }}
 		                                Nombre: <input type="text" name="name" id="id_addModalName" required><br>
 		                                Sexo: <select name="gender" id="id_addModalSexo" required>
 		                                    <option value="Masculino" >Masculino</option>
@@ -89,7 +90,8 @@ and open the template in the editor.
 						<h4>Modificar</h4>
 					</div>
 					<div class="modal-body">
-		                            <form action="mod" method="get">
+		                            <form action="mod" method="post">
+		                            	{{ csrf_field() }}
 		                            	<input type="hidden" name="id" id="id_modifyModalId"><br>
 		                                Nombre: <input type="text" name="name" id="id_modifyModalName" required><br>
 		                                Sexo: <select name="gender" id="id_modifyModalSexo" required>

@@ -39,8 +39,7 @@ class indexController extends Controller
     public function del(Request $request) {
         $id = $request->get('id');
         DB::delete('delete from table_persona where id = "'.$id.'"');
-        $listaPersona = DB::table('table_persona')->get();
-        return view('index')->with('listaPersona', $listaPersona);
+        return $this->index();
     }
 
     public function add(Request $request) {
@@ -51,8 +50,7 @@ class indexController extends Controller
         $mail = $request->get('mail');
 
         DB::insert('insert into table_persona values(default,"'.$name.'","'.$gender.'","'.$age.'","'.$phone.'","'.$mail.'")');
-        $listaPersona = DB::table('table_persona')->get();
-        return view('index')->with('listaPersona', $listaPersona);
+        return $this->index();
     }
 
     public function mod(Request $request) {
@@ -64,7 +62,6 @@ class indexController extends Controller
         $mail = $request->get('mail');
 
         DB::insert('update table_persona set nombre="'.$name.'", sexo="'.$gender.'", edad="'.$age.'", movil="'.$phone.'", correo="'.$mail.'" where id="'.$id.'"');
-        $listaPersona = DB::table('table_persona')->get();
-        return view('index')->with('listaPersona', $listaPersona);
+        return $this->index();
     }
 }
