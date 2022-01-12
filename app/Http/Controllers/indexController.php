@@ -50,7 +50,7 @@ class indexController extends Controller
         $mail = $request->get('mail');
 
         DB::insert('insert into table_persona values(default,"'.$name.'","'.$gender.'","'.$age.'","'.$phone.'","'.$mail.'")');
-        return $this->index();
+        return redirect('/');
     }
 
     public function mod(Request $request) {
@@ -62,6 +62,6 @@ class indexController extends Controller
         $mail = $request->get('mail');
 
         DB::insert('update table_persona set nombre="'.$name.'", sexo="'.$gender.'", edad="'.$age.'", movil="'.$phone.'", correo="'.$mail.'" where id="'.$id.'"');
-        return $this->index();
+        return redirect('/');
     }
 }

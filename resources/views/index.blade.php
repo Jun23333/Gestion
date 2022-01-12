@@ -18,27 +18,27 @@ and open the template in the editor.
     	<div id="search">
 	        <form action="name" method="get">
 	            <input type="text" name="filter">
-	            <button type="submit">Buscar por nombre</button>
+	            <button type="submit" class="btn btn-primary">Buscar por nombre</button>
 	        </form>
 	        <form action="gender" method="get">
 	            <select name="filter">
 	                <option value="Masculino">Masculino</option>
 	                <option value="Femenino">Femenino</option>
 	            </select>
-	            <button type="submit">Filtrar por sexo</button>
+	            <button type="submit" class="btn btn-primary">Filtrar por sexo</button>
 	        </form>
 	        <form action="age" method="get">
-	            <button type="submit" name="filter" value="age">Filtrar por edad de 25-55</button>
+	            <button type="submit" class="btn btn-primary">Filtrar por edad de 25-55</button>
 	        </form>
 	        <form action="all" method="get">
-	            <button type="submit">Mostrar todos</button>
+	            <button type="submit" class="btn btn-primary">Mostrar todos</button>
 	        </form>
         </div>
 
         <div id="table">
-	    	<button data-toggle="modal" data-target="#addModal">Agregar</button>
+	    	<button data-toggle="modal" data-target="#addModal" class="btn btn-primary">Agregar</button>
 			<?php
-			echo '<table border="1">'
+			echo '<table class="table">'
 	        . '<caption>Personas</caption>'
 	        . '<tr><th>Nombres</th><tr>';
 	    	foreach ($listaPersona as $persona) {
